@@ -1,0 +1,22 @@
+
+.main_nav {
+	width: 100%;
+	background-color: black;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f1f1f1), color-stop(1, #e2e2e2));
+	border-bottom: 1px solid #bfc4c8;
+	display: table;
+	text-align: center;
+}
+.main_nav a {
+	display: table-cell;
+	font: 18px/34px Arial, Helvetica, sans-serif;
+	font-color: black;
+	text-decoration: none;
+	padding: 0 3px 0 0;
+}
+
+.ui-li-thumb {
+	height: 150px;
+	width: 95px;
+	padding-left: 10px;
+}

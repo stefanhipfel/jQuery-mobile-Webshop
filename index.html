@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Web Shop</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/Webshop_jQm/css/jquery.mobile-1.0.min.css" />
+		<link rel="stylesheet" href="/Webshop_jQm/css/basic.css" />
+		<script type="text/javascript" src="/Webshop_jQm/js/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="/Webshop_jQm/js/jquery.mobile-1.0.min.js"></script>
+	</head>
+
+	<body>
+		
+		<!-- Begin: Main Shop page  -->
+		<section id="mainPage" data-role="page" position="fixed" data-add-back-btn="true">
+				<header data-role="header" id="main_header">
+					<h1>Web-Shop (jQuery mobile)</h1>
+					<a href="#account"
+					   data-transition="flip"
+					   data-role="button"
+					   data-icon="gear"
+					   data.icon-pos="notext"
+					   class="ui-btn-right">Account</a>
+					<nav class="main_nav">
+						<a href="" data-transition="slidedown">Stores</a><a href="">Cart</a><a href="">Help</a>
+					</nav>
+				</header><!--- /header -->
+				
+				<div class="content" data-role="content">
+					<input type="search" name="search" id="main_search" value="search . . .">
+					<div id="main_teaser">
+						<div id="test" class="ui-bar ui-bar-e" style="height:200px"></div>
+					</div>
+					<nav id="main_categories" data-role="collapsible-set">
+					</nav>
+				</div><!-- /content -->
+		<footer data-role="footer" data-theme="c">
+			<h1>dmc WebShop <i>jQuery mobile</i></h1>
+		</footer>
+		</section>
+		<!-- End: Main Shop page -->
+		
+		<!-- Begin: Account page -->
+		<section id="accountPage" data-role="page">
+			<header data-role="header">
+				<h1>Web-Shop (jQuery mobile)</h1>
+			</header>
+			
+			<div class="content" data-role="content">
+				<h3>Account-Login</h3>
+				<div data-role="fieldcontain">
+					<label for="userId">Email Address:</label>
+					<input type="text" id="userId" value="">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="pwd">Password:</label>
+					<input type="password" id="pwd" value="">
+				</div>
+			</div>
+			<footer data-role="footer" data-theme="c">
+				<h1>dmc WebShop <i>jQuery mobile</i></h1>
+			</footer>
+		</section>
+		<!-- End: Account page -->
+		
+		<!-- Begin: Product view -->
+		<section id="productPage" data-role="page" data-add-back-btn="true">
+			<header data-role="header">
+				<h1>Web-Shop (jQuery mobile)</h1>
+			</header>
+			<div class="content" data-role="content">
+				<div class="container-products">
+					<ul data-role="listview">
+					</ul>
+				</div>
+			</div>
+			<footer data-role="footer" data-theme="c">
+				<h1>dmc WebShop <i>jQuery mobile</i></h1>
+			</footer>
+		</section>
+		<!-- End: Product view -->
+		
+		<!-- Begin: Product detail view -->
+		<section id="productDetailPage" data-role="page" data-add-back-btn="true">
+			<header data-role="header">
+				<h1>Web-Shop (jQuery mobile)</h1>
+				<a href="#mainPage"
+				   data-transition="flip"
+				   data-role="button"
+				   data-icon="home"
+				   data.icon-pos="notext"
+				   class="ui-btn-right">Home</a>
+			</header>
+			<div class="content" data-role="content">
+				<div class="container-product">
+				</div>
+			</div>
+			<footer data-role="footer">
+				<h1>dmc WebShop <i>jQuery mobile</i></h1>
+			</footer>
+		</section>
+		<!-- End: Product detail view -->
+		
+		<!-- Begin: Error page -->
+		<section id="pageError" data-role="page" data-theme="e">
+			<header data-role="header">
+				<h1>Web-Shop (jQuery mobile)</h1>
+			</header>
+			<div class="content" data-role="content">
+			</div>
+			<footer data-role="footer">
+				<h1>dmc WebShop <i>jQuery mobile</i></h1>
+			</footer>
+		</section>
+		<!-- End: Error page -->
+	</body>
+
+	<script type="text/javascript" src="/Webshop_jQm/js/webshop-0.2.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:8000/nowjs/now.js"></script>
+
+	<script>
+	$('#mainPage').live('pagecreate', function (event) {
+	  window.now = nowInitialize('http://127.0.0.1:8000');
+	  now.func = function () {};
+	  now.ready(function () {
+		console.log('websocket ready');
+		$().initApp();
+	  });
+	});
+	</script>
+</html>
